@@ -663,11 +663,13 @@ class Validator {
 			alreadyChecked[template.speciesid] = true;
 			if (tools.gen === 2 && template.gen === 1) tradebackEligible = true;
 			// STABmons hack to avoid copying all of validateSet to formats
-			if (format.banlistTable && format.banlistTable['ignorestabmoves'] && !(moveid in {'acupressure':1, 'bellydrum':1, 'chatter':1, 'darkvoid':1, 'geomancy':1, 'lovelykiss':1, 'shellsmash':1, 'shiftgear':1})) {
+			if (format.banlistTable && format.banlistTable['ignorestabmoves'] && !(moveid in {'acupressure':1, 'chatter':1, 'shiftgear':1})) {
 				let types = template.types;
 				if (template.species === 'Shaymin') types = ['Grass', 'Flying'];
+				if (template.baseSpecies === 'Rotom' && tools.gen === 7) types = ['Electric', 'Ghost', 'Fire', 'Water', 'Ice', 'Flying', 'Grass'];
 				if (template.baseSpecies === 'Hoopa') types = ['Psychic', 'Ghost', 'Dark'];
-				if (types.includes(move.type)) return false;
+				if (template.baseSpecies === 'Oricorio') types = ['Fire', 'Electric', 'Psychic', 'Ghost', 'Flying'];
+				if (types.includes(move.type) || (template.baseSpecies === 'Arceus' || template.baseSpecies === 'Sivally') && tools.gen === 7) return false;
 			}
 			if (!template.learnset) {
 				if (template.baseSpecies !== template.species) {

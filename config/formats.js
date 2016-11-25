@@ -416,8 +416,15 @@ exports.Formats = [
 		column: 2,
 	},
 	{
+		name: "[Gen 7] STABmons",
+		
+		mod: 'gen7',
+		ruleset: ['Pokemon', 'Standard', 'Team Preview', 'Baton Pass Clause'],
+		banlist: ['Uber', 'Bank-Uber', 'Power Construct', 'Shadow Tag', 'Ignore STAB Moves', "King's Rock", 'Razor Fang'],
+	},
+	{
 		name: "[Gen 7] Balanced Hackmons",
-
+		
 		mod: 'gen7',
 		ruleset: ['Pokemon', 'Ability Clause', 'OHKO Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod'],
 		banlist: ['Arena Trap', 'Huge Power', 'Moody', 'Parental Bond', 'Protean', 'Pure Power', 'Shadow Tag', 'Wonder Guard', 'Chatter', 'Extreme Evoboost'],
